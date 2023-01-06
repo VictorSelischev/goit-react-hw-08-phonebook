@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchContacts } from 'services/operations';
+import { Routes, Route } from 'react-router-dom';
 
+import { fetchContacts } from 'services/operations';
 import { Section } from './Section/Section';
 import { ContactForm } from './ContactForm/ContactForm';
 import { ContactsList } from './Contacts/ContactsList';
@@ -17,7 +18,6 @@ export const App = () => {
     dispatch(fetchContacts());
   }, [dispatch]);
 
-
   return (
     <div
       style={{
@@ -31,14 +31,23 @@ export const App = () => {
         backgroundColor: '#c0ddff',
       }}
     >
-      <Section title={'Phonebook'}>
+      <AppBar />
+
+      <Routes>
+        <Route />
+        <Route />
+        <Route />
+        <Route />
+      </Routes>
+
+      {/* <Section title={'Phonebook'}>
         <ContactForm />
       </Section>
       <Section title={'Contacts'}>
         <Filter />
         {isLoading && !error && <b>Loading Phone contacts...</b>}
         <ContactsList />
-      </Section>
+      </Section> */}
     </div>
   );
 };
