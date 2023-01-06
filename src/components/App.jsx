@@ -10,7 +10,10 @@ import { Filter } from './Filter/Filter';
 import { selectError, selectIsLoading } from 'redux/selectors';
 
 
-const HomePage = lazy(() => import());
+const HomePage = lazy(() => import('../pages/Home'));
+const RegisterPage = lazy(() => import('../pages/Register'));
+const LoginPage = lazy(() => import('../pages/Login'));
+const ContactsPage = lazy(() => import('../pages/Contacts'));
 
 export const App = () => {
   const dispatch = useDispatch();
