@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, lazy } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
 
@@ -8,6 +8,9 @@ import { ContactForm } from './ContactForm/ContactForm';
 import { ContactsList } from './Contacts/ContactsList';
 import { Filter } from './Filter/Filter';
 import { selectError, selectIsLoading } from 'redux/selectors';
+
+
+const HomePage = lazy(() => import());
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -34,10 +37,10 @@ export const App = () => {
       <AppBar />
 
       <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/register' element={ <Register/>} />
-        <Route path='/login' element={<Login/>} />
-        <Route path='/contacts' element={<Contacts/>} />
+        <Route path='/' element={<HomePage/>} />
+        <Route path='/register' element={ <RegisterPage/>} />
+        <Route path='/login' element={<LoginPage/>} />
+        <Route path='/contacts' element={<ContactsPage/>} />
       </Routes>
 
       {/* <Section title={'Phonebook'}>
