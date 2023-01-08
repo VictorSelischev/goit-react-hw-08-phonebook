@@ -1,7 +1,12 @@
+.navigation {
+    margin-right: 80px;
+}
+
 .link {
     display: inline-block;
     text-decoration: none;
     padding: 12px;
+    font-size: 20px;
     font-weight: 700;
     color: #2a363b;
 }

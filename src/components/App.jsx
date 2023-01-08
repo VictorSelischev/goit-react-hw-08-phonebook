@@ -2,12 +2,14 @@ import { useEffect, lazy } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
 
+import { Layout } from './Layout';
+
 import { fetchContacts } from 'services/operations';
 import { Section } from './Section/Section';
 import { ContactForm } from './ContactForm/ContactForm';
 import { ContactsList } from './Contacts/ContactsList';
 import { Filter } from './Filter/Filter';
-import { AppBar } from './AppBar/AppBar';
+
 import { selectError, selectIsLoading } from 'redux/selectors';
 
 
@@ -26,26 +28,15 @@ export const App = () => {
   // }, [dispatch]);
 
   return (
-    <div
-      // style={{
-      //   height: '100vh',
-      //   display: 'flex',
-      //   flexDirection: 'column',
-      //   justifyContent: 'center',
-      //   alignItems: 'center',
-      //   fontSize: 40,
-      //   color: '#010101',
-      //   backgroundColor: '#c0ddff',
-      // }}
-    >
-      <AppBar />
-
-      <Routes>
-        <Route path='/' element={<HomePage/>} />
-        <Route path='/register' element={ <RegisterPage/>} />
-        <Route path='/login' element={<LoginPage/>} />
-        <Route path='/contacts' element={<ContactsPage/>} />
-      </Routes>
+    <Routes>
+      <Route path='/' element={<Layout />} >
+        <Route index element={<HomePage />} />
+        <Route path='/register' element={<RegisterPage />} />
+        <Route path='/login' element={<LoginPage />} />
+        <Route path='/contacts' element={<ContactsPage />} />
+      </Route>
+    </Routes>);
+};
 
       {/* <Section title={'Phonebook'}>
         <ContactForm />
@@ -55,6 +46,3 @@ export const App = () => {
         {isLoading && !error && <b>Loading Phone contacts...</b>}
         <ContactsList />
       </Section> */}
-    </div>
-  );
-};

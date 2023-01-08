@@ -3,11 +3,11 @@ import css from './Navigation.module.css';
 
 export const Navigation = () => {
     return (
-        <nav>
-            <NavLink to='/'>Home</NavLink>
-            <NavLink to="/register">Register</NavLink>
-            <NavLink to="/login">Login</NavLink>
-            <NavLink to="/contacts">Contacts</NavLink>
+        <nav className={css.navigation}>
+            <NavLink className={css.link} to='/'>Home</NavLink>
+            <NavLink className={css.link} to="/register">Register</NavLink>
+            <NavLink className={css.link} to="/login">Login</NavLink>
+            <NavLink className={css.link} to="/contacts">Contacts</NavLink>
         </nav>
     );
 }
