@@ -7,7 +7,7 @@ const styles = {
     },
     title: {
         fontWeight: 500,
-        fontSize: 48,
+        fontSize: 32,
         textAlign: 'center',
     },
     paragraph: {
@@ -19,9 +19,9 @@ const styles = {
 
 const Home = () => {
     return (
-        <div className={styles.container}>
-            <h1 clasName={styles.title} >Hello friend!</h1>
-            <p className={styles.paragraph} >Please register and login in your contacts list</p>
+        <div style={styles.container}>
+            <h1 style={styles.title} >Hello friend!</h1>
+            <p style={styles.paragraph} >Please register and login in your contacts list</p>
         </div>
     );
 }
