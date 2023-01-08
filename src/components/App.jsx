@@ -20,8 +20,6 @@ const ContactsPage = lazy(() => import('../pages/Contacts'));
 
 export const App = () => {
   const dispatch = useDispatch();
-  const isLoading = useSelector(selectIsLoading);
-  const error = useSelector(selectError);
 
   // useEffect(() => {
   //   dispatch(fetchContacts());
@@ -37,12 +35,3 @@ export const App = () => {
       </Route>
     </Routes>);
 };
-
-      {/* <Section title={'Phonebook'}>
-        <ContactForm />
-      </Section>
-      <Section title={'Contacts'}>
-        <Filter />
-        {isLoading && !error && <b>Loading Phone contacts...</b>}
-        <ContactsList />
-      </Section> */}
