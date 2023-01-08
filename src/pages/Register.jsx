@@ -4,12 +4,24 @@ import { register } from "redux/auth/authOperation";
 const styles = {
   registerform: {
     display: 'flex',
-    width: 320,
+    flexDirection: 'column',
+    width: 240,
+    marginTop: 60,
 },
   label: {
     display: 'flex',
     flexDirection: 'column',
+    fontSize: 16,
     marginBottom: 16,
+  },
+
+  input: {
+    marginTop: 4,
+  },
+
+  button: {
+    width: 100,
+    padding: '4px 8px',
   }
   }
 
@@ -28,17 +40,17 @@ const Register = () => {
     };
 
   return (
-    <form  className={styles.registerform} autoComplete="off" onSubmit={handleSubmit} >
-      <label className={styles.label}>Name
-        <input type="text" name="name" />
+    <form  style={styles.registerform} autoComplete="off" onSubmit={handleSubmit} >
+      <label style={styles.label}>Name
+        <input style={styles.input} type="text" name="name" />
       </label>
-      <label className={styles.label}>Email
-        <input type="email" name="email" />
+      <label style={styles.label}>Email
+        <input style={styles.input} type="email" name="email" />
       </label>
-      <label className={styles.label}>Password
-        <input type="password" name="password" />
+      <label style={styles.label}>Password
+        <input style={styles.input} type="password" name="password" />
       </label>
-      <button type="submit">Register</button>
+      <button style={styles.button} type="submit">Register</button>
     </form>
   );
 };
