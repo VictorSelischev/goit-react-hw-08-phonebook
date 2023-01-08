@@ -14,11 +14,9 @@ const styles = {
     fontSize: 16,
     marginBottom: 16,
   },
-
   input: {
     marginTop: 4,
   },
-
   button: {
     width: 100,
     padding: '4px 8px',
