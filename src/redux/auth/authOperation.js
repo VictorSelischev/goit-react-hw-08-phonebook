@@ -47,14 +47,11 @@ export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   }
 });
 
-export const getContact = createAsyncThunk(
-  'auth/getcontact',
-  async (_, thunkAPI) => {
-    try {
-      const response = await axios.get('/users/current');
-      return response.data;
-    } catch (error) {
-      thunkAPI.rejectWithValue(error.message);
-    }
+export const getUser = createAsyncThunk('auth/getuser', async (_, thunkAPI) => {
+  try {
+    const response = await axios.get('/users/current');
+    return response.data;
+  } catch (error) {
+    thunkAPI.rejectWithValue(error.message);
   }
-);
+});

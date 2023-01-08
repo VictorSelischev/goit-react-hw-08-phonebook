@@ -1,17 +1,10 @@
 import { useEffect, lazy } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
 
 import { Layout } from './Layout';
 
-import { fetchContacts } from 'services/operations';
-import { Section } from './Section/Section';
-import { ContactForm } from './ContactForm/ContactForm';
-import { ContactsList } from './Contacts/ContactsList';
-import { Filter } from './Filter/Filter';
-
-import { selectError, selectIsLoading } from 'redux/selectors';
-
+import { getUser } from 'redux/auth/authOperation';
 
 const HomePage = lazy(() => import('../pages/Home'));
 const RegisterPage = lazy(() => import('../pages/Register'));
@@ -21,9 +14,9 @@ const ContactsPage = lazy(() => import('../pages/Contacts'));
 export const App = () => {
   const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   dispatch(fetchContacts());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(getUser());
+  }, [dispatch]);
 
   return (
     <Routes>
