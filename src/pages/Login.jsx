@@ -1,5 +1,27 @@
 import { useDispatch } from "react-redux";
 
+const styles = {
+  form: {
+    display: 'flex',
+    flexDirection: 'column',
+    width: 240,
+    marginTop: 60,
+},
+  label: {
+    display: 'flex',
+    flexDirection: 'column',
+    fontSize: 16,
+    marginBottom: 16,
+  },
+  input: {
+    marginTop: 4,
+  },
+  button: {
+    width: 100,
+    padding: '4px 8px',
+  }
+  }
+
 const Login = () => {
 
     const dispatch = useDispatch();
@@ -12,17 +34,15 @@ const Login = () => {
     };
 
     return (
-        <div>
-            <form autoComplete="off" onSubmit={handleSubmit} >
-                <label>
-                    <input type="email" name="email" />
+            <form style={styles.form} autoComplete="off" onSubmit={handleSubmit} >
+                <label style={styles.label} >Email
+                    <input style={styles.input} type="email" name="email" />
                 </label>
-                <label>
-                    <input type="password" name="password" />
+                <label style={styles.label} >Password
+                    <input style={styles.input} type="password" name="password" />
                 </label>
-                <button type="submit" ></button>
+                <button style={styles.button} type="submit" >Login</button>
             </form>
-        </div>
     );
 }
 
