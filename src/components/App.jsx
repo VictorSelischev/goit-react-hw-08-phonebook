@@ -7,6 +7,7 @@ import { Section } from './Section/Section';
 import { ContactForm } from './ContactForm/ContactForm';
 import { ContactsList } from './Contacts/ContactsList';
 import { Filter } from './Filter/Filter';
+import { AppBar } from './AppBar/AppBar';
 import { selectError, selectIsLoading } from 'redux/selectors';
 
 
