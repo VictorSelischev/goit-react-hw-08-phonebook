@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import { Layout } from './Layout';
 
-import { getUser } from 'redux/auth/authOperation';
+import { refreshCurrentUser } from 'redux/auth/authOperation';
 
 const HomePage = lazy(() => import('../pages/Home'));
 const RegisterPage = lazy(() => import('../pages/Register'));
@@ -15,7 +15,7 @@ export const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getUser());
+    dispatch(refreshCurrentUser());
   }, [dispatch]);
 
   return (

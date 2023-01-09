@@ -24,17 +24,15 @@ const middleware = [
 ];
 
 // WHITELIST
-const persistConfig = {
+const authPersistConfig = {
   key: 'auth',
   storage: storage,
   whitelist: ['token'], // only navigation will be persisted
 };
 
-const persistedAuthReducer = persistReducer(persistConfig, authReducer);
-
 export const store = configureStore({
   reducer: {
-    auth: persistedAuthReducer,
+    auth: persistReducer(authPersistConfig, authReducer),
     contacts: contactsReducer,
     filter: filterReducer,
   },
